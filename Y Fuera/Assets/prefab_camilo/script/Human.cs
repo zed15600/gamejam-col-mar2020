@@ -2,20 +2,39 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public struct HumanState {
+    public float speed;
+    public ObjectType current_state;
+    public int sprite;
+    public float distance;
+}
+
 public class Human : MonoBehaviour
 {
-    public bool fallen = false;
-    public float distance = 0;
+    bool fallen = false;
+    float final_distance = 0;
+    Vector3 final_position;
+    public HumanState current_state = new HumanState{};
     // Start is called before the first frame update
     void Start()
     {
-        
+        final_distance = Random.Range(1.00f,3.33f);
+        final_position = new Vector3(transform.position.x+final_distance, transform.position.y, transform.position.z);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(current_state.current_state == ObjectType.UP){
+            this.fallen = false;
+        }
+        if(current_state.current_state == ObjectType.DOWN){
+            this.fallen = true;
+        }
+        Vector3 vector_final_position = final_position - transform.position;
+        Vector3 direction = vector_final_position.normalized;
+        transform.position += direction * Time.deltaTime;
+        Debug.Log(final_position);
     }
 
     void OnCollisionEnter2D(Collision2D other) {
@@ -25,18 +44,8 @@ public class Human : MonoBehaviour
             ObjectObstacle obj = other.gameObject.GetComponent<ObjectObstacle>();
             if (obj != null) {
                 Debug.Log(obj.Type);
-                switch (obj.Type){
-                    case ObjectType.UP:
-                        this.fallen = false;
-                        break;
-                    case ObjectType.DOWN:
-                        this.fallen = true;
-                        break;
-                    case ObjectType.MOVE:
-                        this.distance = obj.distance;
-                        break;
-                }
-                
+                current_state = obj.effect_on_human;
+                this.final_position = new Vector3(other.transform.position.x + current_state.distance, this.transform.position.y, this.transform.position.z);
             }
         }
     }
