@@ -5,7 +5,7 @@ using UnityEngine;
 public struct HumanState {
     public float speed;
     public ObjectType current_state;
-    public int sprite;
+    public Sprite sprite;
     public float distance;
 }
 
@@ -15,6 +15,9 @@ public class Human : MonoBehaviour
     float final_distance = 0;
     Vector3 final_position;
     public HumanState current_state = new HumanState{};
+    public Animator animator;
+    public SpriteRenderer sprrenderer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,7 +37,10 @@ public class Human : MonoBehaviour
         Vector3 vector_final_position = final_position - transform.position;
         Vector3 direction = vector_final_position.normalized;
         transform.position += direction * Time.deltaTime;
-        Debug.Log(final_position);
+    }
+
+    public void ChangeSprite(){
+        sprrenderer.sprite = this.current_state.sprite;
     }
 
     void OnCollisionEnter2D(Collision2D other) {
@@ -45,7 +51,15 @@ public class Human : MonoBehaviour
             if (obj != null) {
                 Debug.Log(obj.Type);
                 current_state = obj.effect_on_human;
-                this.final_position = new Vector3(other.transform.position.x + current_state.distance, this.transform.position.y, this.transform.position.z);
+                animator.SetTrigger("Flip");
+                if(current_state.current_state == ObjectType.MOVE)
+                {
+                    float x_position = other.transform.position.x + current_state.distance;
+                    if(this.fallen == true){
+                        x_position += 1;
+                    }
+                    this.final_position = new Vector3(x_position, this.transform.position.y, this.transform.position.z);
+                }
             }
         }
     }
