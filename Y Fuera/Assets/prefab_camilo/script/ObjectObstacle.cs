@@ -16,6 +16,9 @@ public class ObjectObstacle : MonoBehaviour
     public float distance = 0;
     public float speed = 0;
     public Sprite human_sprite;
+    public float sound_cost;
+    public NoiseBar noise_bar;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,9 +28,7 @@ public class ObjectObstacle : MonoBehaviour
         effect_on_human.sprite = human_sprite;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void OnMouseDown(){
+        this.noise_bar.AddNoise(this.sound_cost);
     }
 }
