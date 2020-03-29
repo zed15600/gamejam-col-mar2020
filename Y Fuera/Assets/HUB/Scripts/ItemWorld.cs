@@ -18,6 +18,19 @@ public class ItemWorld : MonoBehaviour, IPointerClickHandler
         itemWorld.SetItem(item);
         return itemWorld;
     }
+
+    /// <summary>
+    /// Función que permite dropear un item.
+    /// Y llama a la función de spawneo de item en el mundo.
+    /// </summary>
+    /// <param name="dropPosition">Posición en donde se va a dropear el item</param>
+    /// <param name="item">Item a dropear</param>
+    /// <returns></returns>
+    public static ItemWorld DropItem(Vector3 dropPosition, Item item)
+    {
+        ItemWorld itemWorld = SpawnItemWorld(dropPosition, item);
+        return itemWorld;
+    }
     #endregion
 
     private Player player;
@@ -57,7 +70,7 @@ public class ItemWorld : MonoBehaviour, IPointerClickHandler
     /// </summary>
     public void DestroySelf()
     {
-        Destroy(gameObject, 0.5f);
+        Destroy(gameObject);
     }
 
     

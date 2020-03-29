@@ -23,12 +23,31 @@ public class Inventory
 
     /// <summary>
     /// Método por el cúal se agregan los items que puede usar al player a la lista de items.
+    /// Y llama al evento de que la lista de items del inventario a cambiado.
     /// </summary>
     /// <param name="item">Item que recibe para posteriormente ser guardado.</param>
     public void AddItems(Item item)
     {
         itemList.Add(item);
         OnItemListChanged?.Invoke(this, EventArgs.Empty);
+    }
+
+    /// <summary>
+    /// Método por el cúal se elimina un objeto del inventario del player.
+    /// Y llama al evento de que la lista de items del inventario a cambiado.
+    /// </summary>
+    /// <param name="item"></param>
+    public void RemoveItem(Item item)
+    {
+        foreach (var obj in itemList)
+        {
+            if(obj.Name == item.Name){
+                itemList.Remove(obj);
+                
+                break;
+            }       
+        } 
+        OnItemListChanged?.Invoke(this, EventArgs.Empty);   
     }
 
     /// <summary>

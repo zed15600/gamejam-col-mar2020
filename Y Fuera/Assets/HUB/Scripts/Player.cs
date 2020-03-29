@@ -14,9 +14,6 @@ public class Player : MonoBehaviour
     {
         inventory = new Inventory();
         uiInventory.SetInventory(inventory);
-        ItemWorld.SpawnItemWorld(new Vector3(1, 1), ItemDatabase.Instance.itemDatabase[0]);
-        ItemWorld.SpawnItemWorld(new Vector3(-1, 1), ItemDatabase.Instance.itemDatabase[1]);
-        ItemWorld.SpawnItemWorld(new Vector3(0, -1), ItemDatabase.Instance.itemDatabase[2]);
     }
 
 

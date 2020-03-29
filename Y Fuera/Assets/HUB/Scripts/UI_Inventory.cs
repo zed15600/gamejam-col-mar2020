@@ -32,7 +32,7 @@ public class UI_Inventory : MonoBehaviour
     /// <summary>
     /// Método por el cual se refresca el HUB de los objetos que se encuentran presentes dentro del inventario del jugador.
     /// </summary>
-    public void RefreshInventoryItems()
+    private void RefreshInventoryItems()
     {
         foreach (Transform child in itemSlot)
         {

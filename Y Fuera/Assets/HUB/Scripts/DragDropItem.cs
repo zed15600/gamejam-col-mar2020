@@ -2,21 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-public class DragDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
+using UnityEngine.UI;
+public class DragDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IPointerUpHandler
 {
     [SerializeField]
     private Canvas canvas;
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
-
-    [SerializeField]
-    private UI_Inventory uiInventory;
+    private Player player;
 
     private void Awake() 
     {
         rectTransform = gameObject.GetComponent<RectTransform>();
         canvasGroup = gameObject.GetComponent<CanvasGroup>();
-        uiInventory = GameObject.Find("Inventory").GetComponent<UI_Inventory>();
+        player = GameObject.Find("Player").GetComponent<Player>();
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -33,13 +32,31 @@ public class DragDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandle
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        uiInventory.RefreshInventoryItems();
         canvasGroup.alpha = 1f;
-        canvasGroup.blocksRaycasts = true;
+        canvasGroup.blocksRaycasts = true; 
+
+        
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
         
+    }
+
+
+
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        Debug.Log("Item Dropeado");
+        foreach (Item obj in ItemDatabase.Instance.itemDatabase)
+        {
+            if(obj.Sprite == gameObject.transform.GetChild(1).GetComponentInChildren<Image>().sprite)
+            {
+                Debug.Log(obj.Name);
+                player.inventory.RemoveItem(obj);
+                ItemWorld.DropItem(Input.mousePosition, obj);
+                break;
+            }
+        } 
     }
 }
