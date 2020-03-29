@@ -52,9 +52,15 @@ public class DragDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandle
         {
             if(obj.Sprite == gameObject.transform.GetChild(1).GetComponentInChildren<Image>().sprite)
             {
+                Vector3 p = Input.mousePosition;
+                p.z = 10;
+                Vector3 pos = Camera.main.ScreenToWorldPoint(p);
                 Debug.Log(obj.Name);
                 player.inventory.RemoveItem(obj);
-                ItemWorld.DropItem(Input.mousePosition, obj);
+                if(pos.y < 0){
+                    pos.y = 0;
+                }
+                ItemWorld.DropItem(pos, obj);
                 break;
             }
         } 

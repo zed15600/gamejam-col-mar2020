@@ -3,9 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ItemSlot : MonoBehaviour, IDropHandler
+
+public class ItemSlot : MonoBehaviour,  IPointerUpHandler, IPointerDownHandler
 {
-    public void OnDrop(PointerEventData eventData)
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        
+    }
+
+    public void OnPointerUp(PointerEventData eventData)
     {
         Debug.Log("Drop item");
         if(eventData.pointerDrag != null){
