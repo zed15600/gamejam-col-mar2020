@@ -124,6 +124,8 @@ MonoBehaviour:
   sound_cost: 1
   noise_bar: {fileID: 0}
   description: "A veces extra\xF1o a Jerry"
+  clipHit: {fileID: 8300000, guid: 9c479f79400a51f4a8e7aa693e36f256, type: 3}
+  clipPlace: {fileID: 8300000, guid: d33d4f49221d05245986ad8e2020c183, type: 3}
 --- !u!70 &8024365617194999581
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -150,7 +152,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d33d4f49221d05245986ad8e2020c183, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

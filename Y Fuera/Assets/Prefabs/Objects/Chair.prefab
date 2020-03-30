@@ -124,6 +124,8 @@ MonoBehaviour:
   sound_cost: 7
   noise_bar: {fileID: 0}
   description: "Ven y si\xE9ntate, cu\xE9ntame tus problemas"
+  clipHit: {fileID: 8300000, guid: 29848885bb613fe4eaa7e9317bb0740f, type: 3}
+  clipPlace: {fileID: 8300000, guid: 49629858f956cb04d833797741f85a3c, type: 3}
 --- !u!70 &4057539972549479765
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -150,7 +152,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 49629858f956cb04d833797741f85a3c, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

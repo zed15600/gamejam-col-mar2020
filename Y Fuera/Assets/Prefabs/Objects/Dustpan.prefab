@@ -124,6 +124,8 @@ MonoBehaviour:
   sound_cost: 5
   noise_bar: {fileID: 0}
   description: "Un cl\xE1sico"
+  clipHit: {fileID: 8300000, guid: b498c863b53a82845b23bb2a9eb7225a, type: 3}
+  clipPlace: {fileID: 8300000, guid: 38ff3aa4179d5024db0308b99cd7192c, type: 3}
 --- !u!70 &7060656525237908699
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -150,7 +152,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 38ff3aa4179d5024db0308b99cd7192c, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

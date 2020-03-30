@@ -124,6 +124,8 @@ MonoBehaviour:
   sound_cost: 2
   noise_bar: {fileID: 0}
   description: Funciona en personas y funciona en karts
+  clipHit: {fileID: 8300000, guid: b40ee9cdae1465f449b0294c93887c8a, type: 3}
+  clipPlace: {fileID: 8300000, guid: a077164956d28ae4cb3767b61faf8712, type: 3}
 --- !u!70 &3866895897422896145
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -150,7 +152,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a077164956d28ae4cb3767b61faf8712, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

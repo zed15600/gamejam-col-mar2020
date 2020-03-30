@@ -124,6 +124,8 @@ MonoBehaviour:
   sound_cost: 7
   noise_bar: {fileID: 0}
   description: El veterinario manda mis saludos
+  clipHit: {fileID: 8300000, guid: 943cec80d48360545be9fb6a766b679d, type: 3}
+  clipPlace: {fileID: 8300000, guid: c998e3a6b7ce7694690cd6686f8413be, type: 3}
 --- !u!70 &6366837017546985657
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -150,7 +152,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c998e3a6b7ce7694690cd6686f8413be, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

@@ -124,6 +124,8 @@ MonoBehaviour:
   sound_cost: 8
   noise_bar: {fileID: 0}
   description: 
+  clipHit: {fileID: 8300000, guid: 7adc81f3d61282e40a069b67f37a8c19, type: 3}
+  clipPlace: {fileID: 8300000, guid: 25541a935c2600e4c9c1eb5ca6785c3e, type: 3}
 --- !u!70 &1054690990423145194
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -150,7 +152,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 25541a935c2600e4c9c1eb5ca6785c3e, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

@@ -124,6 +124,8 @@ MonoBehaviour:
   sound_cost: 4
   noise_bar: {fileID: 0}
   description: "Para ver bailar a mi due\xF1o"
+  clipHit: {fileID: 8300000, guid: 09e91e9ebf7e0cf4dbf73d8d045b72d0, type: 3}
+  clipPlace: {fileID: 8300000, guid: dfc197898f88fe24e91d7bafd78e0fbc, type: 3}
 --- !u!70 &750555334812409573
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -150,7 +152,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: dfc197898f88fe24e91d7bafd78e0fbc, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

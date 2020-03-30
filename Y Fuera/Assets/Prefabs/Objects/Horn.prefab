@@ -124,6 +124,8 @@ MonoBehaviour:
   sound_cost: 3
   noise_bar: {fileID: 0}
   description: "Buenos d\xEDas, sabandija"
+  clipHit: {fileID: 8300000, guid: cd50bf73e991df744a08b62fd8ad6cc6, type: 3}
+  clipPlace: {fileID: 8300000, guid: 1ddfba49fae02474cb3b9c243cfc1c7b, type: 3}
 --- !u!70 &6406626123172758711
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

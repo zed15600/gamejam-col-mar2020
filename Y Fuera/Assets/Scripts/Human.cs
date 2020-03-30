@@ -72,9 +72,12 @@ public class Human : MonoBehaviour
         } else if (other.gameObject.CompareTag("object")) {
             speed = 7;
             ObjectObstacle obj = other.gameObject.GetComponent<ObjectObstacle>();
+            AudioSource audio = other.gameObject.GetComponent<AudioSource>();
+            audio.clip = obj.clipHit;
             if (obj != null) {
                 current_state = obj.effect_on_human;
                 animator.SetTrigger("Flip");
+                audio.Play();
                 if(current_state.current_state == ObjectType.MOVE) {
                     float displacement = current_state.distance;
                     if(fallen == true){

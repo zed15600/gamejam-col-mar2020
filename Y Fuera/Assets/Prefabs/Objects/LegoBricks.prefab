@@ -124,6 +124,8 @@ MonoBehaviour:
   sound_cost: 6
   noise_bar: {fileID: 0}
   description: "Porque mi due\xF1o necesita un masaje de pie"
+  clipHit: {fileID: 8300000, guid: 628b8b1e5fbf3e44996b6cb4cd006da6, type: 3}
+  clipPlace: {fileID: 8300000, guid: 09c8efc06ec3bde448226bb3b6a5ec8e, type: 3}
 --- !u!70 &4618237922681407814
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -150,7 +152,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 09c8efc06ec3bde448226bb3b6a5ec8e, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

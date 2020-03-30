@@ -18,6 +18,8 @@ public class ObjectObstacle : MonoBehaviour
     public float sound_cost;
     public NoiseBar noise_bar;
     public string description;
+    public AudioClip clipHit;
+    public AudioClip clipPlace;
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +35,8 @@ public class ObjectObstacle : MonoBehaviour
             collider.enabled = false;
         } else if (other.gameObject.CompareTag("ground")) {
             AudioSource audio = this.GetComponent<AudioSource>();
-            audio.Play(0);
+            audio.clip = clipPlace;
+            audio.Play();
             this.noise_bar.AddNoise(this.sound_cost);
         }
     }
