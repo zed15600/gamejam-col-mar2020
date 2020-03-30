@@ -161,12 +161,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d6b47eeb55e15f4cb8273fa0e4ada38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallen: 0
-  started: 0
-  final_distance: 0
-  final_position: {x: 0, y: 0, z: 0}
   animator: {fileID: 3510281753721994866}
   sprrenderer: {fileID: 7125963658495441806}
+  standing: {fileID: 21300000, guid: ef8eecb0d51bb42b895d9845bf285666, type: 3}
+  windowed: {fileID: 21300000, guid: 26ffb5819773540a6be611f3d6b58ae4, type: 3}
   spriteNames:
   - Lego
   - Bucket
@@ -183,35 +181,36 @@ MonoBehaviour:
   - Horn
   - Chair
   fallenSprites:
-  - {fileID: 21300000, guid: ad680cbae1e2a4cfaaaeb0697e2197de, type: 3}
-  - {fileID: 21300000, guid: 088d932895ed04b30afae6ce91362c8f, type: 3}
-  - {fileID: 21300000, guid: 97cab74a4d1a14bcb89c244b66ec2f46, type: 3}
-  - {fileID: 21300000, guid: 7cc84dc035b4943488a7eb4becc7bed6, type: 3}
-  - {fileID: 21300000, guid: a5e3e2931f5bc4303859f8aec886b066, type: 3}
-  - {fileID: 21300000, guid: 5f1a457b478e94c51975b52db82836c0, type: 3}
-  - {fileID: 21300000, guid: ac1c97c91dd1e413cad4d148bacd6a2c, type: 3}
-  - {fileID: 21300000, guid: d4a9f12006d6f4f28858f18cbebc40f0, type: 3}
-  - {fileID: 21300000, guid: 6ac3535c1d4b048fc9527693266b6f7d, type: 3}
-  - {fileID: 21300000, guid: d48c5b1ef36614af2895327383f2642e, type: 3}
-  - {fileID: 21300000, guid: e03bc9e0044dc4790838f44d7bd8db63, type: 3}
-  - {fileID: 21300000, guid: 307a7e9c069e14a289ab59a64c64d127, type: 3}
-  - {fileID: 21300000, guid: d79abfdfe89f84f5d9e369f0782b107c, type: 3}
-  - {fileID: 21300000, guid: 066c63a84233b4a8ea3ea6a91c5c5c7f, type: 3}
+  - {fileID: 21300000, guid: ccbb205c6a4c246bd8419662178f745d, type: 3}
+  - {fileID: 21300000, guid: 521a25bf04d6a40639156e228560e2ea, type: 3}
+  - {fileID: 21300000, guid: b9e569f5c6e3c439aa4ca99800cbc53a, type: 3}
+  - {fileID: 21300000, guid: 68031126516934f29947b5279e5f22bb, type: 3}
+  - {fileID: 21300000, guid: ae5f5b04a21904f2a92db5fad911938b, type: 3}
+  - {fileID: 21300000, guid: 471fd8a04e00b4d97ab0c8c9f955e9e9, type: 3}
+  - {fileID: 21300000, guid: cdab698fd02a9429b822131518764227, type: 3}
+  - {fileID: 21300000, guid: 4338119833b9940ba9fdef45c6bdeab1, type: 3}
+  - {fileID: 21300000, guid: df02932c8bb104915b222c8d6c90de8f, type: 3}
+  - {fileID: 21300000, guid: 97fc8134783194c1aaf0f4099c3bf3ea, type: 3}
+  - {fileID: 21300000, guid: d37f7a3da4c2549b49eec880b859ae72, type: 3}
+  - {fileID: 21300000, guid: 57b3455bb81024393ba09ff5ec249697, type: 3}
+  - {fileID: 21300000, guid: 622830e08c1f44f83866cd5cc45ba602, type: 3}
+  - {fileID: 21300000, guid: a56bfc333718042f6bd8bfd02f4bbfe2, type: 3}
   standingSprites:
-  - {fileID: 21300000, guid: 3df8aab0501ce4a218154760527d8ad3, type: 3}
-  - {fileID: 21300000, guid: 83a257e762efe489c925f620611a8d12, type: 3}
-  - {fileID: 21300000, guid: 675bd1527597a47db8bd954603fcc13e, type: 3}
-  - {fileID: 21300000, guid: a31c5879afdf64da2b53b24e58ebd60f, type: 3}
-  - {fileID: 21300000, guid: df3303e3ea5fc4024a7e830a98d8084c, type: 3}
-  - {fileID: 21300000, guid: 6cab784f6b8bb4c8a8ee9d8a20fe3c2d, type: 3}
-  - {fileID: 21300000, guid: 38b7eb209681e4eef886cf2297d7e96e, type: 3}
-  - {fileID: 21300000, guid: d80b262fafbc74aa78eb5d0995feaa05, type: 3}
-  - {fileID: 21300000, guid: 9c6fc9d5cd23947898b5e06183de1825, type: 3}
-  - {fileID: 21300000, guid: 9e8ee54f6ce804a86a47c3e6e28676c1, type: 3}
-  - {fileID: 21300000, guid: e03bc9e0044dc4790838f44d7bd8db63, type: 3}
-  - {fileID: 21300000, guid: 307a7e9c069e14a289ab59a64c64d127, type: 3}
-  - {fileID: 21300000, guid: d79abfdfe89f84f5d9e369f0782b107c, type: 3}
-  - {fileID: 21300000, guid: 066c63a84233b4a8ea3ea6a91c5c5c7f, type: 3}
+  - {fileID: 21300000, guid: 4b8ee0a23fb1a4db8b24b90735065c04, type: 3}
+  - {fileID: 21300000, guid: 5125fe1fc74b143e19cd0d610cd6b1a3, type: 3}
+  - {fileID: 21300000, guid: 3786d3cd0311948b8a68885541c9aa80, type: 3}
+  - {fileID: 21300000, guid: e3963060a538a4b7d9c7c4ede898afb5, type: 3}
+  - {fileID: 21300000, guid: d3bfc662a6d3849168c7453731bab3b9, type: 3}
+  - {fileID: 21300000, guid: 02e49fc02e9ed4af3b6422fc7f8e90b4, type: 3}
+  - {fileID: 21300000, guid: 36ca3ef1dfb3a4d5a8bce4a8622e96f6, type: 3}
+  - {fileID: 21300000, guid: 913e9390e6beb4ef391a6dc798a10c48, type: 3}
+  - {fileID: 21300000, guid: 8d287f18b480246c6a7b02e0c0e03bc8, type: 3}
+  - {fileID: 21300000, guid: 325f2159b402e4914a9f4d4d66fd0db6, type: 3}
+  - {fileID: 21300000, guid: d37f7a3da4c2549b49eec880b859ae72, type: 3}
+  - {fileID: 21300000, guid: 57b3455bb81024393ba09ff5ec249697, type: 3}
+  - {fileID: 21300000, guid: 622830e08c1f44f83866cd5cc45ba602, type: 3}
+  - {fileID: 21300000, guid: a56bfc333718042f6bd8bfd02f4bbfe2, type: 3}
+  scManager: {fileID: 0}
 --- !u!50 &3650600609108632904
 Rigidbody2D:
   serializedVersion: 4

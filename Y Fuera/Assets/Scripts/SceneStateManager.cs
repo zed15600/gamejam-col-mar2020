@@ -22,7 +22,13 @@ public class SceneStateManager : MonoBehaviour {
         AudioManager.Instance.audioSource.Play();
     }
 
-    public void loser() {
+    public IEnumerator loser() {
+        yield return new WaitForSeconds(5);
+        abortTrap();
+    }
+
+    public IEnumerator win() {
+        yield return new WaitForSeconds(5);
         abortTrap();
     }
 

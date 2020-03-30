@@ -13,7 +13,9 @@ public class Human : MonoBehaviour
 {
     bool fallen = false;
     bool started = false;
+    bool ended = false;
     float final_distance = 0;
+    float goal = 17f;
     Vector3 final_position;
     float speed = 3;
     public Dictionary<bool, Dictionary<string, Sprite>> sprites = new Dictionary<bool, Dictionary<string, Sprite>>();
@@ -21,6 +23,7 @@ public class Human : MonoBehaviour
     public Animator animator;
     public SpriteRenderer sprrenderer;
     public Sprite standing;
+    public Sprite windowed;
     public string[] spriteNames;
     public Sprite[] fallenSprites;
     public Sprite[] standingSprites;
@@ -36,6 +39,7 @@ public class Human : MonoBehaviour
         for(int i=0; i<standingSprites.Length; i++){
             sprites[false].Add(spriteNames[i], standingSprites[i]);
         }
+        sprites[false].Add("Windowed", windowed);
         sprites[true].Add("Standing", standing);
         sprites[false].Add("Standing", standing);
     }
@@ -53,10 +57,19 @@ public class Human : MonoBehaviour
             Vector3 vector_final_position = final_position - transform.position;
             Vector3 direction = vector_final_position.normalized;
             transform.position += direction * speed * Time.deltaTime;
-        } else if (started && final_distance < transform.position.x) {
-            current_state.name = "Standing";
-            animator.SetTrigger("Flip");
-            scManager.loser();
+        } else if (!ended && started && final_position.x <= transform.position.x) {
+            ended = true;
+            if (transform.position.x >= goal && !fallen) {
+                current_state.name = "Windowed";
+                animator.SetTrigger("Flip");
+                transform.position = new Vector3(18.09f, -2.36f, 0f);
+                GetComponent<Rigidbody2D>().gravityScale = 0;
+                StartCoroutine(scManager.win());
+            } else {
+                current_state.name = "Standing";
+                animator.SetTrigger("Flip");
+                StartCoroutine(scManager.loser());
+            }
         }
     }
 
