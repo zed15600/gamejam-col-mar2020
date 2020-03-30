@@ -20,9 +20,11 @@ public class Human : MonoBehaviour
     public HumanState current_state = new HumanState();
     public Animator animator;
     public SpriteRenderer sprrenderer;
+    public Sprite standing;
     public string[] spriteNames;
     public Sprite[] fallenSprites;
     public Sprite[] standingSprites;
+    public SceneStateManager scManager;
 
     // Start is called before the first frame update
     void Start() {
@@ -34,6 +36,8 @@ public class Human : MonoBehaviour
         for(int i=0; i<standingSprites.Length; i++){
             sprites[false].Add(spriteNames[i], standingSprites[i]);
         }
+        sprites[true].Add("Standing", standing);
+        sprites[false].Add("Standing", standing);
     }
 
     // Update is called once per frame
@@ -49,6 +53,10 @@ public class Human : MonoBehaviour
             Vector3 vector_final_position = final_position - transform.position;
             Vector3 direction = vector_final_position.normalized;
             transform.position += direction * speed * Time.deltaTime;
+        } else if (started && final_distance < transform.position.x) {
+            current_state.name = "Standing";
+            animator.SetTrigger("Flip");
+            scManager.loser();
         }
     }
 

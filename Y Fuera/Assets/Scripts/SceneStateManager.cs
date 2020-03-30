@@ -20,6 +20,10 @@ public class SceneStateManager : MonoBehaviour {
         human.SetActive(true);
     }
 
+    public void loser() {
+        abortTrap();
+    }
+
     public void abortTrap() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
