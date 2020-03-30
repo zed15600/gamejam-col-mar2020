@@ -39,17 +39,12 @@ public class UI_Inventory : MonoBehaviour
             if(child == itemTemplate) continue;
             Destroy(child.gameObject);
         }
-        float x = 0.1f;
-        int y = 0;
-        float itemSlotCellSize = 200f;
         foreach (Item item in inventory.GetItemList())
         {
             RectTransform itemTemplateRectTransform = Instantiate(itemTemplate, itemSlot).GetComponent<RectTransform>();
             itemTemplateRectTransform.gameObject.SetActive(true);
-            itemTemplateRectTransform.anchoredPosition = new Vector2(x * itemSlotCellSize, y * itemSlotCellSize);
             Image image = itemTemplateRectTransform.Find("Image").GetComponent<Image>();
-            image.sprite = item.Sprite;      
-            x++;
+            image.sprite = item.Sprite;
         }
     }
 
