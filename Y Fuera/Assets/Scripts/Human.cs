@@ -5,7 +5,7 @@ using UnityEngine;
 public struct HumanState {
     public float speed;
     public ObjectType current_state;
-    public Sprite sprite;
+    public string name;
     public float distance;
 }
 
@@ -40,7 +40,8 @@ public class Human : MonoBehaviour
     }
 
     public void ChangeSprite(){
-        sprrenderer.sprite = this.current_state.sprite;
+        //TODO change sprite
+        //sprrenderer.sprite = this.current_state.sprite;
     }
 
     void OnCollisionEnter2D(Collision2D other) {

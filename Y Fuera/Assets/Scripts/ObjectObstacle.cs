@@ -14,28 +14,26 @@ public class ObjectObstacle : MonoBehaviour
     public HumanState effect_on_human = new HumanState{};
     public ObjectType Type;
     public float distance = 0;
-    public float speed = 0;
-    public Sprite human_sprite;
+    public string objectName;
     public float sound_cost;
     public NoiseBar noise_bar;
+    public string description;
 
     // Start is called before the first frame update
     void Start()
     {
         effect_on_human.current_state = Type;        
         effect_on_human.distance = distance;
-        effect_on_human.speed = speed;
-        effect_on_human.sprite = human_sprite;
-    }
-
-    void OnMouseDown(){
-        this.noise_bar.AddNoise(this.sound_cost);
+        effect_on_human.name = objectName;
     }
 
     void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.CompareTag("human")) {
-            BoxCollider2D collider = this.GetComponent<BoxCollider2D>();
+            CapsuleCollider2D collider = this.GetComponent<CapsuleCollider2D>();
             collider.enabled = false;
+        } else if (other.gameObject.CompareTag("ground")) {
+            //noise_bar.AddNoise(sound_cost);
+            //TODO play sound
         }
     }
 }
