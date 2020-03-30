@@ -12,12 +12,14 @@ public class SceneStateManager : MonoBehaviour {
     public GameObject human;
 
     public void goodMorning() {
+        AudioManager.Instance.audioSource.clip = AudioManager.Instance.clipBackgroundDay;
         for (int i=0; i<daySprites.Length; i++) {
             backgournd[i].sprite = daySprites[i];
         }
         nightUI.SetActive(false);
         dayUI.SetActive(true);
         human.SetActive(true);
+        AudioManager.Instance.audioSource.Play();
     }
 
     public void loser() {
