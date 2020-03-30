@@ -21,7 +21,7 @@ public class CameraResolution : MonoBehaviour
  
         if (Screen.width == ScreenSizeX && Screen.height == ScreenSizeY) return;
  
-        float targetaspect = 4.0f / 3.0f;
+        float targetaspect = 16.0f / 9.0f;
         float windowaspect = (float)Screen.width / (float)Screen.height;
         float scaleheight = windowaspect / targetaspect;
         Camera camera = GetComponent<Camera>();

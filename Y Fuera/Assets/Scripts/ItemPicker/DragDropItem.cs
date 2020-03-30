@@ -48,20 +48,36 @@ public class DragDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandle
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        foreach (Item obj in ItemDatabase.Instance.itemDatabase)
-        {
-            if(obj.Sprite == gameObject.transform.GetChild(1).GetComponentInChildren<Image>().sprite)
+        Debug.Log(eventData.position);
+        if(eventData.position.y < 150){
+            Debug.Log(eventData.pointerDrag);
+            foreach (Item obj in ItemDatabase.Instance.itemDatabase)
             {
-                Vector3 p = Input.mousePosition;
-                p.z = 10;
-                Vector3 pos = Camera.main.ScreenToWorldPoint(p);
-                player.inventory.RemoveItem(obj);
-                if(pos.y < 0){
-                    pos.y = 0;
+                if(obj.Sprite == gameObject.transform.GetChild(1).GetComponentInChildren<Image>().sprite)
+                {
+                    player.inventory.RemoveItem(obj);
+                    player.inventory.AddItems(obj);
+                    break;
                 }
-                ItemWorld.DropItem(pos, obj, noiseBar);
-                break;
-            }
-        } 
+            } 
+        }
+        else
+        {
+            foreach (Item obj in ItemDatabase.Instance.itemDatabase)
+            {
+                if(obj.Sprite == gameObject.transform.GetChild(1).GetComponentInChildren<Image>().sprite)
+                {
+                    Vector3 p = Input.mousePosition;
+                    p.z = 10;
+                    Vector3 pos = Camera.main.ScreenToWorldPoint(p);
+                    player.inventory.RemoveItem(obj);
+                    if(pos.y < 0){
+                        pos.y = 0;
+                    }
+                    ItemWorld.DropItem(pos, obj, noiseBar);
+                    break;
+                }
+            } 
+        }  
     }
 }
