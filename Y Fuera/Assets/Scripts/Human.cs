@@ -12,17 +12,28 @@ public struct HumanState {
 public class Human : MonoBehaviour
 {
     bool fallen = false;
+    bool started = false;
     float final_distance = 0;
     Vector3 final_position;
-    public HumanState current_state = new HumanState{};
+    float speed = 3;
+    public Dictionary<bool, Dictionary<string, Sprite>> sprites = new Dictionary<bool, Dictionary<string, Sprite>>();
+    public HumanState current_state = new HumanState();
     public Animator animator;
     public SpriteRenderer sprrenderer;
+    public string[] spriteNames;
+    public Sprite[] fallenSprites;
+    public Sprite[] standingSprites;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        final_distance = Random.Range(1.00f,3.33f);
-        final_position = new Vector3(transform.position.x+final_distance, transform.position.y, transform.position.z);
+    void Start() {
+        sprites.Add(true, new Dictionary<string, Sprite>());
+        sprites.Add(false, new Dictionary<string, Sprite>());
+        for(int i=0; i<fallenSprites.Length; i++){
+            sprites[true].Add(spriteNames[i], fallenSprites[i]);
+        }
+        for(int i=0; i<standingSprites.Length; i++){
+            sprites[false].Add(spriteNames[i], standingSprites[i]);
+        }
     }
 
     // Update is called once per frame
@@ -34,32 +45,35 @@ public class Human : MonoBehaviour
         if(current_state.current_state == ObjectType.DOWN){
             this.fallen = true;
         }
-        Vector3 vector_final_position = final_position - transform.position;
-        Vector3 direction = vector_final_position.normalized;
-        transform.position += direction * Time.deltaTime;
+        if (final_distance > 0 && transform.position.x < final_position.x) {
+            Vector3 vector_final_position = final_position - transform.position;
+            Vector3 direction = vector_final_position.normalized;
+            transform.position += direction * speed * Time.deltaTime;
+        }
     }
 
     public void ChangeSprite(){
-        //TODO change sprite
-        //sprrenderer.sprite = this.current_state.sprite;
+        sprrenderer.sprite = sprites[fallen][current_state.name];
     }
 
     void OnCollisionEnter2D(Collision2D other) {
-        Debug.Log("enter Collider");
-        if (other.gameObject.CompareTag("object")) {
-            Debug.Log("tag object");
+        if (!started && other.gameObject.CompareTag("ground")) {
+            started = true;
+            final_distance = Random.Range(3f,5f);
+            final_position = new Vector3(transform.position.x+final_distance, transform.position.y, transform.position.z);
+        } else if (other.gameObject.CompareTag("object")) {
+            speed = 7;
             ObjectObstacle obj = other.gameObject.GetComponent<ObjectObstacle>();
             if (obj != null) {
-                Debug.Log(obj.Type);
                 current_state = obj.effect_on_human;
                 animator.SetTrigger("Flip");
-                if(current_state.current_state == ObjectType.MOVE)
-                {
-                    float x_position = other.transform.position.x + current_state.distance;
-                    if(this.fallen == true){
-                        x_position += 1;
+                if(current_state.current_state == ObjectType.MOVE) {
+                    float displacement = current_state.distance;
+                    if(fallen == true){
+                        displacement += 1;
                     }
-                    this.final_position = new Vector3(x_position, this.transform.position.y, this.transform.position.z);
+                    displacement *= 2;
+                    final_position = new Vector3(transform.position.x + displacement, transform.position.y, transform.position.z);
                 }
             }
         }

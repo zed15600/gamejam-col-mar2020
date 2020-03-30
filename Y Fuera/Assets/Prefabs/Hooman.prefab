@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3510281753721994866}
   - component: {fileID: 208878964}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: GraphicComponent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8a26335e37cb5c44f801c8331c0bd250, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ef8eecb0d51bb42b895d9845bf285666, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -124,16 +124,16 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3650600609108632905}
-  - component: {fileID: 3650600609108632907}
   - component: {fileID: 3650600609108632908}
   - component: {fileID: 3650600609108632904}
+  - component: {fileID: 798979788}
   m_Layer: 0
-  m_Name: human
+  m_Name: Hooman
   m_TagString: human
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3650600609108632905
 Transform:
   m_ObjectHideFlags: 0
@@ -143,38 +143,12 @@ Transform:
   m_GameObject: {fileID: 3650600609108632909}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.83, y: -1.07, z: 0}
-  m_LocalScale: {x: 2.277, y: 2.47, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2281600470311566171}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &3650600609108632907
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3650600609108632909}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 0.8964286}
-    newSize: {x: 8.4, y: 7.53}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 0.86}
-  m_EdgeRadius: 0
 --- !u!114 &3650600609108632908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,8 +161,57 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d6b47eeb55e15f4cb8273fa0e4ada38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fallen: 0
+  started: 0
+  final_distance: 0
+  final_position: {x: 0, y: 0, z: 0}
   animator: {fileID: 3510281753721994866}
   sprrenderer: {fileID: 7125963658495441806}
+  spriteNames:
+  - Lego
+  - Bucket
+  - Skate
+  - Marbles
+  - LiqSoap
+  - RollPin
+  - Banana
+  - Rope
+  - Soap
+  - Bottle
+  - Dirtpan
+  - Mousetrap
+  - Horn
+  - Chair
+  fallenSprites:
+  - {fileID: 21300000, guid: ad680cbae1e2a4cfaaaeb0697e2197de, type: 3}
+  - {fileID: 21300000, guid: 088d932895ed04b30afae6ce91362c8f, type: 3}
+  - {fileID: 21300000, guid: 97cab74a4d1a14bcb89c244b66ec2f46, type: 3}
+  - {fileID: 21300000, guid: 7cc84dc035b4943488a7eb4becc7bed6, type: 3}
+  - {fileID: 21300000, guid: a5e3e2931f5bc4303859f8aec886b066, type: 3}
+  - {fileID: 21300000, guid: 5f1a457b478e94c51975b52db82836c0, type: 3}
+  - {fileID: 21300000, guid: ac1c97c91dd1e413cad4d148bacd6a2c, type: 3}
+  - {fileID: 21300000, guid: d4a9f12006d6f4f28858f18cbebc40f0, type: 3}
+  - {fileID: 21300000, guid: 6ac3535c1d4b048fc9527693266b6f7d, type: 3}
+  - {fileID: 21300000, guid: d48c5b1ef36614af2895327383f2642e, type: 3}
+  - {fileID: 21300000, guid: e03bc9e0044dc4790838f44d7bd8db63, type: 3}
+  - {fileID: 21300000, guid: 307a7e9c069e14a289ab59a64c64d127, type: 3}
+  - {fileID: 21300000, guid: d79abfdfe89f84f5d9e369f0782b107c, type: 3}
+  - {fileID: 21300000, guid: 066c63a84233b4a8ea3ea6a91c5c5c7f, type: 3}
+  standingSprites:
+  - {fileID: 21300000, guid: 3df8aab0501ce4a218154760527d8ad3, type: 3}
+  - {fileID: 21300000, guid: 83a257e762efe489c925f620611a8d12, type: 3}
+  - {fileID: 21300000, guid: 675bd1527597a47db8bd954603fcc13e, type: 3}
+  - {fileID: 21300000, guid: a31c5879afdf64da2b53b24e58ebd60f, type: 3}
+  - {fileID: 21300000, guid: df3303e3ea5fc4024a7e830a98d8084c, type: 3}
+  - {fileID: 21300000, guid: 6cab784f6b8bb4c8a8ee9d8a20fe3c2d, type: 3}
+  - {fileID: 21300000, guid: 38b7eb209681e4eef886cf2297d7e96e, type: 3}
+  - {fileID: 21300000, guid: d80b262fafbc74aa78eb5d0995feaa05, type: 3}
+  - {fileID: 21300000, guid: 9c6fc9d5cd23947898b5e06183de1825, type: 3}
+  - {fileID: 21300000, guid: 9e8ee54f6ce804a86a47c3e6e28676c1, type: 3}
+  - {fileID: 21300000, guid: e03bc9e0044dc4790838f44d7bd8db63, type: 3}
+  - {fileID: 21300000, guid: 307a7e9c069e14a289ab59a64c64d127, type: 3}
+  - {fileID: 21300000, guid: d79abfdfe89f84f5d9e369f0782b107c, type: 3}
+  - {fileID: 21300000, guid: 066c63a84233b4a8ea3ea6a91c5c5c7f, type: 3}
 --- !u!50 &3650600609108632904
 Rigidbody2D:
   serializedVersion: 4
@@ -204,9 +227,25 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 7
+  m_Constraints: 5
+--- !u!58 &798979788
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3650600609108632909}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5

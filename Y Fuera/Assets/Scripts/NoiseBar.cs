@@ -14,7 +14,6 @@ public class NoiseBar : MonoBehaviour
     
     
     public void AddNoise(float noise_made){
-        Debug.Log(noise_made);
         current_noise += noise_made;
         if(current_noise >= max_noise){
             Debug.Log("WAKE ME UP INSIDE");

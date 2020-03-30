@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8932006626776144185
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8932006626776144187}
+  - component: {fileID: 8932006626776144186}
+  m_Layer: 0
+  m_Name: ItemDatabase
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8932006626776144187
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8932006626776144185}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8932006626776144186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8932006626776144185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6cf8692b89d6c84dad0db30c05c9dee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemDatabase:
+  - name: Banana Skin
+    sprite: {fileID: 21300000, guid: 34d9f8c20ce2a480cbf2da371f8e3bfb, type: 3}
+    prefab: {fileID: 6275450208281218662, guid: a7e7d84783706490aa29816093f27b47,
+      type: 3}
+  - name: Bottle
+    sprite: {fileID: 21300000, guid: 94f1cac5797a04be4896351a3e632095, type: 3}
+    prefab: {fileID: 669643846304195705, guid: 40d674e2f0ebf48e481864e2ca120b24, type: 3}
+  - name: Bucket
+    sprite: {fileID: 21300000, guid: a39d2e149ded8498596a3b6a250e3c19, type: 3}
+    prefab: {fileID: 7847015259209347445, guid: 328208b52d6c54f44add285a1f849fc7,
+      type: 3}
+  - name: Chair
+    sprite: {fileID: 21300000, guid: 9eb7dc664826f405aa9ddd9d0806afaf, type: 3}
+    prefab: {fileID: 7252588449741486320, guid: 899df464041524adab588691602deafe,
+      type: 3}
+  - name: Dustpan
+    sprite: {fileID: 21300000, guid: 21541470444774b9bb8b48dc60f3c6ea, type: 3}
+    prefab: {fileID: 146004063578506960, guid: 7473573af57f544cb9d69e1549d2948f, type: 3}
+  - name: Horn
+    sprite: {fileID: 21300000, guid: dfe0773cd1a8349e8bbba4958c1a322d, type: 3}
+    prefab: {fileID: 8426222495295688727, guid: 4d7dadde5e3f446bc9adbcda1a95c3a1,
+      type: 3}
+  - name: Lego Bricks
+    sprite: {fileID: 21300000, guid: 397b961866f15453f948c6a0afe8f644, type: 3}
+    prefab: {fileID: 5355515625299817637, guid: 1a90ed4c203f34fcb8d24d485286dc3e,
+      type: 3}
+  - name: Liquid Soap
+    sprite: {fileID: 21300000, guid: efca9c71d52254f97b41a11541e2ea52, type: 3}
+    prefab: {fileID: 4040086244753042658, guid: f0a15cd21ec0247a3bdd7a24039097ea,
+      type: 3}
+  - name: Marbles
+    sprite: {fileID: 21300000, guid: 76e4f76b3bf694453b43889622d7cccc, type: 3}
+    prefab: {fileID: 4705782329344155332, guid: 61af9c48f85b14e5e867ad018b157f3a,
+      type: 3}
+  - name: Mousetrap
+    sprite: {fileID: 21300000, guid: 6fa7edb6cc3aa49d4a4b865ec4768896, type: 3}
+    prefab: {fileID: 1253664286979756361, guid: ec01702675b40481ab49607ca517566c,
+      type: 3}
+  - name: Rolling Pin
+    sprite: {fileID: 21300000, guid: 493010b07ded84ae6bc218ca3265ba1c, type: 3}
+    prefab: {fileID: 3537602157039427416, guid: e2e4ac34444ad42dcaf78742c6267980,
+      type: 3}
+  - name: Skateboard
+    sprite: {fileID: 21300000, guid: d6a820d759d084697a8d6b94510a997c, type: 3}
+    prefab: {fileID: 5706759863477492894, guid: 6cabc8213cd714c8b960b160be7a595b,
+      type: 3}
+  - name: Soap
+    sprite: {fileID: 21300000, guid: ad64efb7398114bddab2ea713f551bec, type: 3}
+    prefab: {fileID: 4708887770687213021, guid: a1dbbc0598525469fb5a5467d017f038,
+      type: 3}
