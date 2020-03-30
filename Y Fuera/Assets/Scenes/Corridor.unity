@@ -213,6 +213,7 @@ GameObject:
   - component: {fileID: 383035310}
   - component: {fileID: 383035309}
   - component: {fileID: 383035308}
+  - component: {fileID: 383035311}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -285,6 +286,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &383035311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383035307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53b0c15fe10f24f88a6943151483f22d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  human: {fileID: 1932879750}
+  leftEdge: -11.5
+  rightEdge: 11.5
 --- !u!1001 &552353264
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -394,6 +410,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 0
   distance: 0
+  speed: 0
+  human_sprite: {fileID: 0}
 --- !u!1 &669679720
 GameObject:
   m_ObjectHideFlags: 0
@@ -725,6 +743,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 2
   distance: 5
+  speed: 0
+  human_sprite: {fileID: 0}
 --- !u!1 &1932879746
 GameObject:
   m_ObjectHideFlags: 0
@@ -858,8 +878,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d6b47eeb55e15f4cb8273fa0e4ada38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallen: 0
-  distance: 0
+  animator: {fileID: 0}
+  sprrenderer: {fileID: 0}
 --- !u!1001 &5412730850020505021
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -969,3 +989,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 1
   distance: 0
+  speed: 0
+  human_sprite: {fileID: 0}
