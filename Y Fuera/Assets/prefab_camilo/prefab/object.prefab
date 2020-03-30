@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4040086244753042663}
   - component: {fileID: 4040086244753042656}
   - component: {fileID: 4040086244753042657}
+  - component: {fileID: 1285924212}
   m_Layer: 0
   m_Name: object
   m_TagString: object
@@ -46,7 +47,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Type: 2
-  distance: 4.42
+  distance: 2
+  speed: 0
+  human_sprite: {fileID: 21300000, guid: 3d1ffdfc01099d94d9d16be9dddd281b, type: 3}
+  sound_cost: 0
+  noise_bar: {fileID: 0}
 --- !u!61 &4040086244753042656
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -123,3 +128,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &1285924212
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4040086244753042658}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.77
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 4

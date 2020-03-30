@@ -31,4 +31,11 @@ public class ObjectObstacle : MonoBehaviour
     void OnMouseDown(){
         this.noise_bar.AddNoise(this.sound_cost);
     }
+
+    void OnCollisionEnter2D(Collision2D other) {
+        if (other.gameObject.CompareTag("human")) {
+            BoxCollider2D collider = this.GetComponent<BoxCollider2D>();
+            collider.enabled = false;
+        }
+    }
 }
