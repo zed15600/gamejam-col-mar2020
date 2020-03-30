@@ -32,8 +32,10 @@ public class ObjectObstacle : MonoBehaviour
             CapsuleCollider2D collider = this.GetComponent<CapsuleCollider2D>();
             collider.enabled = false;
         } else if (other.gameObject.CompareTag("ground")) {
-            //noise_bar.AddNoise(sound_cost);
-            //TODO play sound
+            AudioSource audio = this.GetComponent<AudioSource>();
+            audio.Play(0);
+            this.noise_bar.AddNoise(this.sound_cost);
         }
     }
+
 }
