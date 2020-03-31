@@ -23,16 +23,18 @@ public class SceneStateManager : MonoBehaviour {
     }
 
     public IEnumerator loser() {
-        yield return new WaitForSeconds(5);
-        abortTrap();
+        CrossSceneInfo.gameResult = "Loss";
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene("EndGame", LoadSceneMode.Single);
     }
 
     public IEnumerator win() {
-        yield return new WaitForSeconds(5);
-        abortTrap();
+        CrossSceneInfo.gameResult = "Win";
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene("EndGame", LoadSceneMode.Single);
     }
 
     public void abortTrap() {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
     }
 }
