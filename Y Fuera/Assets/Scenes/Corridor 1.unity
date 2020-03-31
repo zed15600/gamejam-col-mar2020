@@ -1403,11 +1403,28 @@ PrefabInstance:
       propertyPath: scManager
       value: 
       objectReference: {fileID: 1015541228}
+    - target: {fileID: 3650600609108632908, guid: e43afa161910640419b25484ad6848ea,
+        type: 3}
+      propertyPath: standing
+      value: 
+      objectReference: {fileID: 21300000, guid: 9bc3a94999a6c45a99ac3034ff2d1a32,
+        type: 3}
     - target: {fileID: 3650600609108632909, guid: e43afa161910640419b25484ad6848ea,
         type: 3}
       propertyPath: m_Name
       value: Hooman
       objectReference: {fileID: 0}
+    - target: {fileID: 3650600609108632909, guid: e43afa161910640419b25484ad6848ea,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7125963658495441806, guid: e43afa161910640419b25484ad6848ea,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9bc3a94999a6c45a99ac3034ff2d1a32,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e43afa161910640419b25484ad6848ea, type: 3}
 --- !u!1001 &4401906881706827995
