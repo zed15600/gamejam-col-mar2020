@@ -26,22 +26,15 @@ public class CameraFollow : MonoBehaviour
             if (human.position.x < rightEdge) {
                 transform.position = new Vector3(Mathf.Max(human.position.x, leftEdge), transform.position.y, transform.position.z);
             }
-        } else {
-            if (Input.mousePosition.x > 0+offset && Input.mousePosition.x < 100+offset){
-                if (transform.position.x > leftEdge) {
-                    moveCamera(true);
-                }
-            } else if (Input.mousePosition.x < 1024+offset && Input.mousePosition.x > 924+offset && Input.mousePosition.y > 250){
-                if (transform.position.x < rightEdge) {
-                    moveCamera(false);
-                }
-            }
         }
     }
 
-    private void moveCamera(bool toLeft) {
+    public void moveCamera(bool toLeft) {
         float speed = 4f;
         Vector3 direction = new Vector3(toLeft?-1:1, 0, 0);
-        transform.position += direction * speed * Time.deltaTime;
+        Vector3 newPos = transform.position + direction* speed * Time.deltaTime;
+        if (newPos.x >= leftEdge && newPos.x <= rightEdge) {
+            transform.position = newPos; 
+        }
     }
 }

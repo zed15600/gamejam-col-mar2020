@@ -48,7 +48,6 @@ public class DragDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandle
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        Debug.Log(eventData.position);
         if(eventData.position.y < 150){
             Debug.Log(eventData.pointerDrag);
             foreach (Item obj in ItemDatabase.Instance.itemDatabase)
