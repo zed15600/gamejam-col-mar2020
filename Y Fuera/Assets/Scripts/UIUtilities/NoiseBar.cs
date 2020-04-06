@@ -6,9 +6,10 @@ using UnityEngine.UI;
 public class NoiseBar : MonoBehaviour
 {
 
+    float current_noise=0;
+    public SceneStateManager stateMngr;
     public float max_noise = 20;
     public Image fill;
-    float current_noise=0;
     public float max_height = 530;
     public float max_width = 51.8f;
     
@@ -16,8 +17,7 @@ public class NoiseBar : MonoBehaviour
     public void AddNoise(float noise_made){
         current_noise += noise_made;
         if(current_noise >= max_noise){
-            Debug.Log("WAKE ME UP INSIDE");
-            // THERE WILL BE THE LOGIC TO WAKE UP DUDE
+            stateMngr.noiseWakeUp();
         }
     }
 

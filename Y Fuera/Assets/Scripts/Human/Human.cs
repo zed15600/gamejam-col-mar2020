@@ -68,7 +68,7 @@ public class Human : MonoBehaviour
             } else {
                 current_state.name = "Standing";
                 animator.SetTrigger("Flip");
-                StartCoroutine(scManager.loser());
+                StartCoroutine(scManager.lose());
             }
         }
     }

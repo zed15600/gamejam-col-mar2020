@@ -22,7 +22,7 @@ public class SceneStateManager : MonoBehaviour {
         AudioManager.Instance.audioSource.Play();
     }
 
-    public IEnumerator loser() {
+    public IEnumerator lose() {
         CrossSceneInfo.gameResult = "Loss";
         yield return new WaitForSeconds(2);
         SceneManager.LoadScene("EndGame", LoadSceneMode.Single);
@@ -36,5 +36,10 @@ public class SceneStateManager : MonoBehaviour {
 
     public void abortTrap() {
         SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+    }
+
+    public void noiseWakeUp() {
+        //TODO: change this for the wakeup scene
+        StartCoroutine(lose());
     }
 }
