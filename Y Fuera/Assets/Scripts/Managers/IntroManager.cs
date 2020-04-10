@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class IntroManager : MonoBehaviour {
@@ -15,9 +14,9 @@ public class IntroManager : MonoBehaviour {
     }
 
     public IEnumerator changeSprite () {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(5f);
         bgImage.sprite = bg2;
-        yield return new WaitForSeconds(5);
-        SceneManager.LoadScene("Corridor", LoadSceneMode.Single);
+        yield return new WaitForSeconds(5f);
+        SceneTransitionManager.instance.transitScene("Corridor");
     }
 }

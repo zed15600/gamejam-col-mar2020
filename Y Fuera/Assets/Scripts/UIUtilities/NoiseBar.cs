@@ -21,9 +21,9 @@ public class NoiseBar : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        fill.rectTransform.sizeDelta = new Vector2(max_width,(max_height*current_noise)/max_noise);
+    void Update() {
+        float height = Mathf.Min(max_height, (max_height*current_noise)/max_noise);
+        fill.rectTransform.sizeDelta = new Vector2(max_width, height);
     }
 
 }

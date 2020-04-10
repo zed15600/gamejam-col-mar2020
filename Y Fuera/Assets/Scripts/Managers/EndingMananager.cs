@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class EndingMananager : MonoBehaviour
 {
@@ -18,6 +17,6 @@ public class EndingMananager : MonoBehaviour
     }
 
     public void goToMainMenu() {
-        SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+        SceneTransitionManager.instance.transitScene("MainMenu");
     }
 }
