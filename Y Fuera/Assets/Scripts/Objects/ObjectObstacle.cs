@@ -9,8 +9,7 @@ public enum ObjectType {
 }
 
 
-public class ObjectObstacle : MonoBehaviour
-{
+public class ObjectObstacle : MonoBehaviour {
     public HumanState effect_on_human = new HumanState{};
     public ObjectType Type;
     public float distance = 0;
@@ -22,8 +21,7 @@ public class ObjectObstacle : MonoBehaviour
     public AudioClip clipPlace;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         effect_on_human.current_state = Type;        
         effect_on_human.distance = distance;
         effect_on_human.name = objectName;
@@ -41,4 +39,7 @@ public class ObjectObstacle : MonoBehaviour
         }
     }
 
+    private void OnMouseDrag() {
+        Debug.Log("I'm being dragged");
+    }
 }

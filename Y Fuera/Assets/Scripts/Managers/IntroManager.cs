@@ -18,6 +18,6 @@ public class IntroManager : MonoBehaviour {
         yield return new WaitForSeconds(5);
         bgImage.sprite = bg2;
         yield return new WaitForSeconds(5);
-        SceneManager.LoadScene("Corridor 1", LoadSceneMode.Single);
+        SceneManager.LoadScene("Corridor", LoadSceneMode.Single);
     }
 }

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5355515625299817637
+--- !u!1 &7349621037234827324
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3001110900283519906}
-  - component: {fileID: 394185456225106768}
-  - component: {fileID: 8201173601464996765}
-  - component: {fileID: 5355515625299817638}
-  - component: {fileID: 4618237922681407814}
-  - component: {fileID: -8478248290475321495}
+  - component: {fileID: 435602334914033467}
+  - component: {fileID: 3086630301888036809}
+  - component: {fileID: 6808861556729960196}
+  - component: {fileID: 7349621037234827327}
+  - component: {fileID: 9001246450494144065}
+  - component: {fileID: 2859688468402932582}
   m_Layer: 0
-  m_Name: LegoBricks
+  m_Name: Rope
   m_TagString: object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3001110900283519906
+--- !u!4 &435602334914033467
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5355515625299817637}
+  m_GameObject: {fileID: 7349621037234827324}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.13, y: -1.87, z: -0.3503434}
+  m_LocalPosition: {x: 13.06, y: -2.338948, z: -0.3503434}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &394185456225106768
+--- !u!212 &3086630301888036809
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5355515625299817637}
+  m_GameObject: {fileID: 7349621037234827324}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 397b961866f15453f948c6a0afe8f644, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f31c2e968cb78496c91e51fd13f317c0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -85,14 +85,14 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &8201173601464996765
+--- !u!50 &6808861556729960196
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5355515625299817637}
+  m_GameObject: {fileID: 7349621037234827324}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -106,33 +106,33 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &5355515625299817638
+--- !u!114 &7349621037234827327
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5355515625299817637}
+  m_GameObject: {fileID: 7349621037234827324}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 32cbb97c95e480d4f99a657653a5eefd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 2
-  distance: 5
-  objectName: Lego
-  sound_cost: 6
+  Type: 1
+  distance: 0
+  objectName: Rope
+  sound_cost: 1
   noise_bar: {fileID: 0}
-  description: "Porque mi due\xF1o necesita un masaje de pie"
-  clipHit: {fileID: 8300000, guid: 628b8b1e5fbf3e44996b6cb4cd006da6, type: 3}
-  clipPlace: {fileID: 8300000, guid: 09c8efc06ec3bde448226bb3b6a5ec8e, type: 3}
---- !u!70 &4618237922681407814
+  description: Ahora es tu turno de volverme viral
+  clipHit: {fileID: 8300000, guid: fb6f4924f96d8034aac084821a956b15, type: 3}
+  clipPlace: {fileID: 8300000, guid: a376cb418b0a7234e8f002b6a3459077, type: 3}
+--- !u!70 &9001246450494144065
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5355515625299817637}
+  m_GameObject: {fileID: 7349621037234827324}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -140,15 +140,15 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.31, y: 0.78}
-  m_Direction: 1
---- !u!82 &-8478248290475321495
+  m_Size: {x: 0.77, y: 0.77}
+  m_Direction: 0
+--- !u!82 &2859688468402932582
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5355515625299817637}
+  m_GameObject: {fileID: 7349621037234827324}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
