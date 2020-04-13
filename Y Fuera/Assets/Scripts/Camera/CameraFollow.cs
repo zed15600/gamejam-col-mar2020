@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraFollow : MonoBehaviour
-{
+public class CameraFollow : MonoBehaviour {
     int screenWidth;
     int offset;
     public Transform human;
@@ -11,8 +10,7 @@ public class CameraFollow : MonoBehaviour
     public float rightEdge;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         screenWidth = Screen.width;
         offset = (screenWidth - 1024)/2;
         Vector3 initialPos = new Vector3(leftEdge, transform.position.y, transform.position.z);
@@ -20,9 +18,8 @@ public class CameraFollow : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (human.gameObject.activeInHierarchy) {
+    void Update() {
+        if (human != null && human.gameObject.activeInHierarchy) {
             if (human.position.x < rightEdge) {
                 transform.position = new Vector3(Mathf.Max(human.position.x, leftEdge), transform.position.y, transform.position.z);
             }
